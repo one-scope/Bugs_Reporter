@@ -1,0 +1,35 @@
+name: "The bugs reporter"
+description: "report expected bugs by using bugspots when open pull requests"
+author: "Okuda Ryuji"
+inputs:
+  branch:
+    description: "The branch name targeted by the bugs reporter"
+    default: ''
+    required: true
+  depth:
+    description: "A number of depth of commit log"
+    default: '100'
+    required: false
+  word:
+    description: "The word to use when finding bugs"
+    default: 'fix'
+    required: false
+  pull_request_url:
+    description: "A url used by the bugs reporter to post"
+    default: ''
+    required: true
+  github_token:
+    description: "token of github"
+    default: ""
+    required: true
+
+runs:
+  using: 'docker'
+  image: 'dockerfile'
+  args:
+    - ${{ inputs.branch }}
+    - ${{ inputs.depth }}
+    - ${{ inputs.word }}
+    - ${{ inputs.pull_required_url }}
+  env:
+    GH_TOKEN: ${{ inputs.github_token }}
