@@ -18,7 +18,7 @@ jobs:
         - name:
           uses: actions/checkout@v3
         - name:
-            uses: OneScope/Bugs_Reporter
+            uses: one-scope/Bugs_Reporter
             with:
                 branch: ${{ github.head_ref }}
                 depth: '100'
