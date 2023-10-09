@@ -3,7 +3,6 @@ bugspotsを用いてPRをオープンした際に自動でバグが潜んでい�
 ## Usage
 github actionを用います．
 
-- `on`を`pull_request`，`on.<event_name>.types`を`opened`にしてください．
 - `jobs.<job_id>.pull-requests.pull-requests`を`write`にしてください．
 - Bugs_ReporterがBugを評価するリポジトリを取り込むことは無いので，`actions/checkout`を用いてリポジトリの内容を取り込んでください．
 
